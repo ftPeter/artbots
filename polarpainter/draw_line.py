@@ -20,7 +20,8 @@ def set_motor_positions( left_in, right_in ):
     resume_motors()
     subprocess.run(args=['ticcmd', '-d', right_motor_address, '-p', str(int(right_tics))])
     subprocess.run(args=['ticcmd', '-d', left_motor_address, '-p', str(int(left_tics))])
-    sleep(4)
+    sleep(2)
+    reset_positions(left_in, right_in)
 
 def resume_motors():
     #subprocess.run(args=['ticcmd', '-d', left_motor_address, '--halt-and-hold'])
